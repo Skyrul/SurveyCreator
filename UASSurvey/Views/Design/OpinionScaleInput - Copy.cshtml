@@ -1,0 +1,147 @@
+﻿<link href="~/assets/range-slider.css" rel="stylesheet" type="text/css" />
+<div class="row">
+    <div class="col-lg-12 hidden_part" id="opinionscale_input">
+        <label>Steps</label>
+        <br />
+        <p><span id="indicatorValRange"></span></p>
+        <div id="slidecontainer">
+            <input type="range" min="3" max="50" value="8" class="slider" id="myRange">
+        </div>
+        <div id="menu-outer">
+            <div class="table">
+                <ul id="horizontal-list" style="padding-left:0px;">
+                    <li><input type="text" id="left_extreme" name="left_extreme" placeholder="left extreme" /></li>
+                    <li><input type="text" id="right_extreme" name="right_extreme" placeholder="right extreme" style="text-align:right;" /></li>
+                </ul>
+            </div>
+            <div class="table">
+                <ul id="horizontal-list">
+                    <li><input type="text" id="the_middle" name="the_middle" placeholder="the middle" style="text-align:center;" /></li>
+                </ul>
+            </div>
+        </div>
+        <div class="m-form__group form-group" id="">
+            <div class="row col-12">
+                <div class="col-6 col-form-label">
+                    <label>
+                        Customize Scale
+                    </label>
+                </div>
+                <div class="col-3">
+                    <span class="m-switch m-switch--icon m-switch--success">
+                        <label>
+                            <input type="checkbox" checked="checked" name="customornot" id="customornot">
+                            <span></span>
+                        </label>
+                    </span>
+                </div>
+                <div class="offset-3"></div>
+            </div>
+
+            <div class="scale_custom">
+
+                <div class="row col-12 orientation_row">
+                    <div class="col-6 col-form-label">
+                        <label>Orientation</label>
+                    </div>
+                    <div class="col-3 dropdown col-form-label">
+                        <button class="btn btn-brand dropdown-toggle" type="button" id="horizontalVerticalButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Horizontal
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item select_Horizontal">
+                                <!--<i class="fa fa-bell"></i>-->
+                                Horizontal
+                            </a>
+                            <a class="dropdown-item select_Vertical">
+                                <!--<i class="fa fa-cloud-upload"></i>-->
+                                Vertical
+                            </a>
+                        </div>
+                    </div>
+                    <div class="offset-3"></div>
+                </div>
+
+                <div class="row col-12 type_row">
+                    <div class="col-6 col-form-label">
+                        <label>Type</label>
+                    </div>
+                    <div class="col-3 dropdown col-form-label typeopinion_select">
+                        <button class="btn btn-brand dropdown-toggle typeopinion_select" type="button" id="type_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Labels only
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item select_Pictures">
+                                <!--<i class="fa fa-bell"></i>-->
+                                Label with Pictures
+                            </a>
+                            <a class="dropdown-item select_Icons">
+                                Label with Icons
+                            </a>
+                            <a class="dropdown-item select_Emoticons">
+                                Label with Emoticons
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="offset-3"></div>
+
+                </div>
+
+                <div class="picture_icon_size_row hidden_part">
+                    <div class="col-6 col-form-label">
+                        <label>Picture/Icon Size</label>
+                    </div>
+                    <div class="col-3 dropdown col-form-label">
+                        <button class="btn btn-brand dropdown-toggle" type="button" id="smallBigButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Small   (50 by 50px)
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item select_SmallSize">
+                                Small   (50 by 50px)
+                            </a>
+                            <a class="dropdown-item select_BigSize">
+                                Big   (150 by 150px)
+                            </a>
+                        </div>
+                    </div>
+                    <div class="offset-3"></div>
+                </div>
+
+                <div class="row  col-12">
+                    <div class="col-6 col-form-label">
+                        <label>Labelings</label>
+                    </div>
+                </div>
+
+                <div id="OpinionLabels" class="row col-12">
+
+                    @for (var op = 1; op <= 10; ++op)
+                    {
+                        <div class="row col-12 OpinionLabels">
+                            <div class="row form-group m-form__group">
+                                <div class="col-4 col-form-label form_label hidden_part">
+                                    <input type="text" id="label_scale_@op" value="" class="form-control m-input label_scale_@op" placeholder="label @op" />
+                                </div>
+                                <div class="col-4 col-form-label icon_select hidden_part">
+                                    @Html.Partial("opinionIcons", ViewData["k"] = op)
+                                </div>
+                                <div class="col-4 col-form-label emoticon_select hidden_part">
+                                    @Html.Partial("opinionEmoticons", ViewData["k"] = op)
+                                </div>
+                                <div class="col-4 col-form-label file_chooser hidden_part">
+                                    <input type="file" class=" col-form-label m-input pic_file_@op" id="pic_file_@op" name="pic_file_@op" accept="image/*" />
+
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--was id labels_input-->
+</div>

@@ -1,0 +1,69 @@
+﻿
+<div id="multistatement_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+        <div class="container_overlay clonable" id="multistatement_container_overlay_question_picture_" style="display:none;">
+            <img id="multistatement_img_place_" name="multistatement_img_place_" src="" alt="" class="image clonable" style="" />
+
+            @*<div class="middle_overlay">
+                    <div class="text_overlay"><a class="btn btn-sm btn-danger btn_remove_picture">Remove Picture</a></div>
+                </div>*@
+        </div>
+
+
+        <div id="multistatement_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">Multi statement question</div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "multistatement_"); }
+
+
+        <div class="col-lg-12 clonable" id="multistatement_input_0_col_" style="display:none;">
+            <div class="m-portlet m-portlet--mobile m-portlet--sortable">
+                <div class="m-portlet__head bg-light">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title ">
+                            <label class="clonable" id="question_number_0_multistatement_">0.</label>
+                            <label class="m-portlet__head-label text-white">
+
+                                @*<input type="checkbox" class="m-checkbox checkbox_55" id="choice_input_0_checkbox">*@
+
+                                <cite id="multistatement_input_0_placing_" class="text-dark m--font-bold h5 clonable" style="font-style:normal; margin-left:5px"> Text goes here</cite>
+
+                                <span></span>
+                            </label>
+                            @*<h3 class="m-portlet__head-text m--font-success">
+                                Portlet Action Buttons
+                            </h3>*@
+                        </div>
+                    </div>
+                    @*<div class="m-portlet__head-tools">
+
+                    </div>*@
+                </div>
+                <div class="m-portlet__body clonable" id="multistatement_portlet_body_0_">
+                    @*<div id="portlet_body_help_text_0">
+                        Your picture / icon / or emoticon here
+                    </div>*@
+
+                    <img id="multistatement_0_picture_placing_" class="clonable" src="" style='width:100px;height:100px;display:none;'>
+                    @*<div id="icon_0_placing" style="font-size:x-large;"><i class=""></i></div>
+                    <img id="emoticon_0_placing" src="" style='display:none;'>*@
+
+                    <div class="m-radio-inline clonable" id="radios_for_statement_0_" style="display:block;">
+                        <label class="m-radio">
+                            <input type="radio" id="multistatement_statement_0_" class="clonable" name="multistatement_statement_0_" value="">
+                            <cite id="multistatement_0_" class="clonable" style="font-style:normal;">Sample option</cite>
+                            <span></span>
+                        </label>
+                        <!-- TEMPLATE RADIO LABEL FOR OPTION-->
+                        <!--same as above-->
+                        <!-- end TEMPLATE RADIO LABEL FOR OPTION-->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

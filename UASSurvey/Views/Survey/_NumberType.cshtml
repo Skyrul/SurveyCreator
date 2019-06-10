@@ -1,0 +1,21 @@
+﻿
+
+
+<div id="number_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+        <div class="container_overlay clonable" id="number_container_overlay_question_picture_" style="display:none;">
+            <img id="number_img_place_" name="number_img_place_" src="" alt="" class="image clonable" style="" />
+        </div>
+
+
+        <div id="number_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">Number type question</div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "number_"); }
+
+        <input id="number_answerinput_" name="number_answerinput_" value="" type="number" min="2" max="99" class="form-control clonable" placeholder="Answer goes here.." />
+        
+
+    </div>
+
+</div>

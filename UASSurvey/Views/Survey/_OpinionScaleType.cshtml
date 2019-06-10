@@ -1,0 +1,22 @@
+﻿
+
+<div id="opinionscale_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+
+        <div class="container_overlay clonable" id="opinionscale_container_overlay_question_picture_" style="display:none;">
+            <img id="opinionscale_img_place_" name="opinionscale_img_place_" src="" alt="" class="image clonable" style="" />
+        </div>
+
+
+        <div id="opinionscale_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">Opinion scale text question</div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "opinionscale_");
+            Html.RenderPartial("_OpinionScaleComponent");
+            }
+
+
+    </div>
+
+</div>
+

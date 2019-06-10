@@ -1,0 +1,26 @@
+﻿
+
+
+<div id="yesno_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+        <div class="container_overlay clonable" id="yesno_container_overlay_question_picture_" style="display:none;">
+            <img id="yesno_img_place_" name="yesno_img_place_" src="" alt="" class="image clonable" style="" />
+        </div>
+
+
+        <div id="yesno_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">yes no text question</div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "yesno_"); }
+
+        
+        <div class="m-form__group form-group">
+        <div class="m-radio-list">
+            <label class="m-radio m-radio--bold"><input class="clonable" id="Yes_Yes_" type="radio" name="yesnocommon" value="Yes">Yes<span></span></label>
+            <label class="m-radio m-radio--bold"><input class="clonable" id="No_No_" type="radio" name="yesnocommon" value="No">No<span></span></label>
+        </div>
+        </div>
+
+    </div>
+
+</div>

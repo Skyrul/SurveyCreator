@@ -1,0 +1,37 @@
+﻿<div class="col-lg-12 hidden_part" id="matrix_group">
+    <span><label>Choices&nbsp;&nbsp;&nbsp;</label><a class="btn btn-sm btn-success" style="font-size:small;" onclick="addAnotherMatrixGroup()">+ Add group</a></span>
+    <input id="matrix_inputs_count" name="matrix_inputs_count" type="hidden" value="1" />
+    <div class="" id="matrix_inputs">
+        <div style="display:inline-block" id="matrix_input_group_1">
+            <div style="float:left">
+                <p>
+                    <span><input id="matrix_input_group_1_textbox" name="matrix_input_group_1_textbox" class="" style="border: 1px double #cccccc; color: #000" onkeyup="onChoiceGroupChange(this.id)" placeholder="Group 1" /><a class="btn btn-sm btn-success" style="font-size:xx-small;" onclick="addAnotherItemToGroup(this)">+ Add item</a></span>
+                    <div id="matrix_input_group_1_subitems" name="matrix_input_group_1_subitems">
+                        <input id="matrix_input_group_1_subitem_count" name="matrix_input_group_1_subitem_count" type="hidden" value="1" />
+                        <div name="matrix_input_group_1_subs">
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="matrix_input_group_1_subitem_1" name="matrix_input_group_1_subitem_1" class="" onkeyup="onMatrixSubitemInputChange(this.id)" placeholder="Subitem 1" style="color: #000;" />&nbsp;<a class="btn btn-sm btn-danger" style="font-size:xx-small;" onclick="removeSubitem(this)">- Remove item</a><br /></span>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="display:none" id="matrix_input_group_1_">
+        <div style="float:left">
+            <p>
+                <span><input id="matrix_input_group_1_textbox" name="matrix_input_group_1_textbox" class="" style="border: 1px double #cccccc;color:#000;" onkeyup="onChoiceGroupChange(this.id)" placeholder="Group 1" /><a class="btn btn-sm btn-success" style="font-size:xx-small;" onclick="addAnotherItemToGroup(this)">+ Add item</a> Remove gr</span>
+                <div id="matrix_input_group_1_subitems" name="matrix_input_group_1_subitems">
+                    <input id="matrix_input_group_1_subitem_count" name="matrix_input_group_1_subitem_count" type="hidden" value="1" />
+                    <div name="matrix_input_group_1_subs">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="matrix_input_group_1_subitem_1" name="matrix_input_group_1_subitem_1" class="" onkeyup="onMatrixSubitemInputChange(this.id)" placeholder="Subitem 1" style="color: #000;" />&nbsp;<a class="btn btn-sm btn-danger" style="font-size:xx-small;" onclick="removeSubitem(this)">- Remove item</a><br /></span>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+
+
+
+</div>

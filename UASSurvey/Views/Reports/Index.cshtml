@@ -1,0 +1,408 @@
+﻿
+@{
+    ViewBag.Title = "Choose report type";
+    Layout = "~/Views/Reports/_IndexLayout.cshtml";
+}
+
+<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body m-page__container">
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close m-aside-left-close--skin-light" id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+    </button>
+    <div id="m_aside_left" class="m-grid__item m-aside-left ">
+        <!-- BEGIN: Aside Menu -->
+        <div id="m_ver_menu"
+             class="m-aside-menu  m-aside-menu--skin-light m-aside-menu--submenu-skin-light "
+             data-menu-vertical="true"
+             data-menu-scrollable="false" data-menu-dropdown-timeout="500">
+            <table class="table table-bordered table-condensed ">
+                <thead>
+                    <tr class="m-subheader">
+                        <td>
+
+                            <h4 class="m-subheader__title " style="margin-top:10px">
+                                Questions
+                            </h4>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="question_row_0" style="display:none;">
+                        <td>
+                            <a class="open-question_0_id_ btn btn-default" title="Question Type">0. Question One?</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br /><br /><br />
+        </div>
+        <!-- END: Aside Menu -->
+    </div>
+    <!-- END: Left Aside -->
+    <!-- Begin: Subheader -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator" id="survey_name_report">
+                    
+                </h3>
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                    @*<li class="m-nav__item m-nav__item--home">
+                        <a href="#" class="m-nav__link m-nav__link--icon">
+                            <i class="m-nav__link-icon la la-home"></i>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">
+                        -
+                    </li>
+                    <li class="m-nav__item">
+                        <a href="" class="m-nav__link">
+                            <span class="m-nav__link-text">
+                                Base
+                            </span>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">
+                        -
+                    </li>
+                    <li class="m-nav__item">
+                        <a href="" class="m-nav__link">
+                            <span class="m-nav__link-text">
+                                State Colors
+                            </span>
+                        </a>
+                    </li>*@
+                </ul>
+            </div>
+            <div>
+                <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+                    <div class="m-form__group form-group">
+                        @*<label for="">
+                            Inline Radios
+                        </label>*@
+                        <div class="m-radio-inline">
+                            <label class="m-radio">
+                                <input type="radio" name="report_type" value="Summary">
+                                Summary
+                                <span></span>
+                            </label>
+                            <label class="m-radio">
+                                <input type="radio" name="report_type" value="Detailed" checked="checked">
+                                Detailed
+                                <span></span>
+                            </label>
+                        </div>
+                        @*<span class="m-form__help">
+                            Some help text goes here
+                        </span>*@
+                    </div>                    
+    @*
+                    <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+                        <i class="la la-plus m--hide"></i>
+                        <i class="la la-ellipsis-h"></i>
+                    </a>
+                    
+                    <div class="m-dropdown__wrapper">
+                        <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust" style="left: auto; right: 21.5px;"></span>
+                        <div class="m-dropdown__inner">
+                            <div class="m-dropdown__body">
+                                <div class="m-dropdown__content">
+                                    <ul class="m-nav">
+                                        <li class="m-nav__section m-nav__section--first m--hide">
+                                            <span class="m-nav__section-text">
+                                                Quick Actions
+                                            </span>
+                                        </li>
+                                        <li class="m-nav__item">
+                                            <a href="" class="m-nav__link">
+                                                <i class="m-nav__link-icon flaticon-share"></i>
+                                                <span class="m-nav__link-text">
+                                                    Activity
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="m-nav__item">
+                                            <a href="" class="m-nav__link">
+                                                <i class="m-nav__link-icon flaticon-chat-1"></i>
+                                                <span class="m-nav__link-text">
+                                                    Messages
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="m-nav__item">
+                                            <a href="" class="m-nav__link">
+                                                <i class="m-nav__link-icon flaticon-info"></i>
+                                                <span class="m-nav__link-text">
+                                                    FAQ
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="m-nav__item">
+                                            <a href="" class="m-nav__link">
+                                                <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                                <span class="m-nav__link-text">
+                                                    Support
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="m-nav__separator m-nav__separator--fit"></li>
+                                        <li class="m-nav__item">
+                                            <a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+                                                Submit
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    *@
+                </div>
+            </div>
+        </div>        
+        <!-- END: Subheader -->
+        <div class="m-content">
+
+            <div class="m-content">
+                @*<div class="m-alert m-alert--icon m-alert--air m-alert--square alert alert-dismissible m--margin-bottom-30" role="alert">
+                        <div class="m-alert__icon">
+                            <i class="flaticon-technology m--font-accent"></i>
+                        </div>
+                        <div class="m-alert__text">
+                            Datatable initialized from remote JSON source with local(frontend) pagination, column order and search support.
+                        </div>
+                    </div>*@
+                <div class="m-portlet m-portlet--mobile">
+                    @*<div class="m-portlet__head">
+                            <div class="m-portlet__head-caption">
+                                <div class="m-portlet__head-title">
+                                    <h3 class="m-portlet__head-text">
+                                        JSON Datatable
+                                        <small>
+                                            initialized from remote json file
+                                        </small>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="m-portlet__head-tools">
+                                <ul class="m-portlet__nav">
+                                    <li class="m-portlet__nav-item">
+                                        <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+                                            <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+                                                <i class="la la-ellipsis-h m--font-brand"></i>
+                                            </a>
+                                            <div class="m-dropdown__wrapper">
+                                                <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                                <div class="m-dropdown__inner">
+                                                    <div class="m-dropdown__body">
+                                                        <div class="m-dropdown__content">
+                                                            <ul class="m-nav">
+                                                                <li class="m-nav__section m-nav__section--first">
+                                                                    <span class="m-nav__section-text">
+                                                                        Quick Actions
+                                                                    </span>
+                                                                </li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-share"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Create Post
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-chat-1"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Send Messages
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-multimedia-2"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Upload File
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__section">
+                                                                    <span class="m-nav__section-text">
+                                                                        Useful Links
+                                                                    </span>
+                                                                </li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-info"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            FAQ
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Support
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__separator m-nav__separator--fit m--hide"></li>
+                                                                <li class="m-nav__item m--hide">
+                                                                    <a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">
+                                                                        Submit
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>*@
+                    <div class="m-portlet__body">
+                        <!--begin: Search Form -->
+                        <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
+                            <div class="mr-auto" style="margin-top:-38px">
+                                <h4 style="text-align:center" class="m-subheader__title m-subheader__title--separator">
+                                    The Report
+                                </h4>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-xl-8 order-2 order-xl-1">
+                                    <div class="form-group m-form__group row align-items-center">
+                                        @*<div class="col-md-4">
+                                            <div class="m-form__group m-form__group--inline">
+                                                <div class="m-form__label">
+                                                    <label>
+                                                        Status:
+                                                    </label>
+                                                </div>
+                                                <div class="m-form__control" style="display:block">
+                                                    <select class="form-control m-bootstrap-select m-bootstrap-select--solid" id="m_form_status">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="d-md-none m--margin-bottom-10"></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="m-form__group m-form__group--inline">
+                                                <div class="m-form__label">
+                                                    <label class="m-label m-label--single">
+                                                        Type:
+                                                    </label>
+                                                </div>
+                                                <div class="m-form__control">
+                                                    <select class="form-control m-bootstrap-select m-bootstrap-select--solid" id="m_form_type">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                        <option value="1">Standard</option>
+                                                        <option value="2">Opinion Poll</option>
+                                                        <option value="3">Generic</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="d-md-none m--margin-bottom-10"></div>
+                                        </div>*@
+                                        <div class="col-md-4">
+                                            <div class="m-input-icon m-input-icon--left">
+                                                <input type="text" class="form-control m-input m-input--solid" placeholder="Search..." id="generalSearch">
+                                                <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                    <span>
+                                                        <i class="la la-search"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 order-1 order-xl-2 m--align-right">                                    
+
+                                    @*<a href="#" id="publish_survey_button" class="btn btn-focus m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
+                            <span>
+                                <i class="la la-cart-plus"></i>
+                                <span>
+                                    Publish Survey
+                                </span>
+                            </span>
+                        </a>*@
+                                    <div class="m-separator m-separator--dashed d-xl-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Search Form -->
+                        <!--begin: Datatable -->
+                        <div class="m_datatable" id="report_data_" style="display:none;"></div>
+                        <!--end: Datatable -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- begin::Footer -->
+<footer class="m-grid__item m-footer ">
+    <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+        <div class="m-footer__wrapper">
+            <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+                <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+                    <span class="m-footer__copyright">
+                        2017 &copy; Surveys by
+                        <a href="#" class="m-link">
+                            UAS
+                        </a>
+                    </span>
+                </div>
+                <div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+                    <ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
+                        <li class="m-nav__item">
+                            <a href="#" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    About
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="#" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Privacy
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="#" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    T&C
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="#" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Purchase
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__item m-nav__item--last">
+                            <a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
+                                <i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end::Footer -->

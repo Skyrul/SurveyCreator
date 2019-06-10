@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "theme1";
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Survey Designer  </title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="@Url.Content("../assets/vendors/base/vendors.bundle.js")" type="text/javascript"></script>
+    
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+
+    <link href="~/assets/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/picture-multichoices.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/opinionScale.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/assets/rating/css/main.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/rating/css/examples.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/rating/css/actual.css" rel="stylesheet" type="text/css" />*@
+
+    <!--begin::Base Styles -->
+    <!--begin::Page Vendors -->
+    <link href="@Url.Content("../assets/vendors/custom/fullcalendar/fullcalendar.bundle.css")" rel="stylesheet" type="text/css" />
+    <!--end::Page Vendors -->
+    <link href="@Url.Content("../assets/vendors/base/vendors.bundle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("../assets/demo/demo5/base/style.bundle.css")" rel="stylesheet" type="text/css" />
+    <!--end::Base Styles -->
+    <link rel="shortcut icon" href="../assets/demo/demo5/media/img/logo/favicon.ico" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- Themes -->
+
+    <link href="~/assets/rating/dist/themes/bars-1to10.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/bars-movie.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/bars-square.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/bars-pill.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/bars-reversed.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/bars-horizontal.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/fontawesome-stars.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/css-stars.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/bootstrap-stars.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/rating/dist/themes/fontawesome-stars-o.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../Scripts/star-rating-svg-master/src/css/star-rating-svg.css">
+    <link href="~/assets/image_overlay.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="m-page--fluid m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+    <!-- begin:: Page -->
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+
+        <!-- begin::Body --View Goes Here -->
+
+        @RenderBody()
+
+        <!-- End::Body -->
+
+        <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+            <i class="la la-arrow-up"></i>
+        </div>
+    </div>
+
+    <script src="@Url.Content("../assets/demo/demo5/base/scripts.bundle.js")" type="text/javascript"></script>
+    <!--end::Base Scripts -->
+    <!--begin::Page Vendors -->
+    <script src="@Url.Content("../assets/vendors/custom/fullcalendar/fullcalendar.bundle.js")" type="text/javascript"></script>
+    <!--end::Page Vendors -->
+    <!--begin::Page Snippets -->
+    <script src="@Url.Content("../assets/app/js/dashboard.js")" type="text/javascript"></script>
+    <!--end::Page Snippets -->
+    
+    <script src="../Scripts/surveybuilder.js"></script>
+    <script src="../Scripts/dateInput.js"></script>
+    <script src="../Scripts/ClearFunction.js"></script>
+    <script src="../Scripts/saveQuestion.js"></script>
+    <script src="../Scripts/imageDataUrl.js"></script>
+    <script src="../Scripts/choiceModal.js"></script>
+    <script src="../Scripts/opinionScale.js"></script>
+    <script src="../Scripts/multiStatement.js"></script>
+
+    <script src="../Scripts/star-rating-svg-master/src/jquery.star-rating-svg.js"></script>
+    <script src="../Scripts/rating.js"></script>
+
+    <script src="@Url.Content("../Scripts/setListeners.js")"></script>
+
+    <script src="../Scripts/bootstrap-imageupload.js"></script>
+    <script src="../Scripts/imageupload.js"></script>
+    <script src="../Scripts/fillQuestionModal.js"></script>
+
+
+    @*
+        <script src="~/assets/rating/jquery.barrating.js"></script>
+        <script src="~/assets/rating/js/examples.js"></script>*@
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--begin::Web font -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: { "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <!--end::Web font -->
+    <!--begin::Page Resources -->
+    <script src="../assets/demo/default/custom/components/base/sweetalert2.js" type="text/javascript"></script>
+    <!--end::Page Resources -->
+    <script src="~/assets/demo/default/custom/components/forms/widgets/bootstrap-datepicker.js"></script>
+   
+</body>
+<!-- end::Body -->
+</html>

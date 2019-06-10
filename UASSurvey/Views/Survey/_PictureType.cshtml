@@ -1,0 +1,46 @@
+﻿
+
+<div id="picture_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+        <div class="container_overlay clonable" id="picture_container_overlay_question_picture_" style="display:none;">
+            <img id="picture_img_place_" name="picture_img_place_" src="" alt="" class="image clonable" style="" />
+        </div>
+
+
+        <div id="picture_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">Picture type question</div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "picture_"); }
+
+        <div id="answertype_place_" class="clonable">
+            <ul id="all_pictures_" class="pic-multi clonable">
+                <li id="picture_0_LI_" class="pic-multi clonable" style="text-align:center;display:none;">
+                    <label id="picture_0_Label_" for="picture_0_checkbox_" class="pic-multi clonable">
+                        <img id="picture_0_img_" src="" alt="Image preview" style="width:auto;" class="thumbnail clonable"><br>
+                        <input type="checkbox" id="picture_0_checkbox_" class="clonable" style="margin-top: 5px;">
+                    </label>
+                </li>
+                @*<li id="picture_38946_LI" name="picture_38946_LI" class="pic-multi" style="text-align:center;">
+                    <label id="picture_38946_Label" name="picture_38946_Label" for="picture_38946_checkbox" class="pic-multi">
+                        <img src="https://www.organicfacts.net/wp-content/uploads/2013/05/Lemon3.jpg" alt="Image preview" style="width:auto;" class="thumbnail"><br>
+                        <input type="checkbox" id="picture_38946_checkbox" style="margin-top: 5px;">
+                    </label>
+                </li>
+                <li id="picture_77040_LI" name="picture_77040_LI" class="pic-multi" style="text-align:center;">
+                    <label id="picture_77040_Label" name="picture_77040_Label" for="picture_77040_checkbox" class="pic-multi">
+                        <img src="" alt="Image preview" style="width:auto;" class="thumbnail"><br>
+                        <input type="checkbox" id="picture_77040_checkbox" style="margin-top: 5px;">
+                    </label>
+                </li>
+                <li id="picture_32534_LI" name="picture_32534_LI" class="pic-multi" style="text-align:center;">
+                    <label id="picture_32534_Label" name="picture_32534_Label" for="picture_32534_checkbox" class="pic-multi">
+                        <img src="https://media1.s-nbcnews.com/j/newscms/2015_28/673151/mango-stock-today-150710-tease_376e85a2c028918cf59a5af9547a66d8.today-inline-large.jpg" alt="Image preview" style="width:auto;" class="thumbnail"><br>
+                        <input type="checkbox" id="picture_32534_checkbox" style="margin-top: 5px;">
+                    </label>
+                </li>*@
+            </ul>
+        </div>
+
+    </div>
+
+</div>

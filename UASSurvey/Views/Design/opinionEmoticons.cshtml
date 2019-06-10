@@ -1,0 +1,50 @@
+﻿<div id="OpinionEmoticons" class="">
+	<div class="m-dropdown m-dropdown--inline m-dropdown--align-left" data-dropdown-toggle="hover" aria-expanded="true">
+		@*<a class="m-dropdown__toggle btn btn-warning dropdown-toggle emoticon_dropdownMenuButton_@ViewData["k"]">
+			Select Emoticon
+		</a>*@
+
+        <a class="btn btn-warning emoticon_dropdownMenuButton_@ViewData["k"]" data-toggle="modal" data-target="#emoticons_modal">
+            Select Emoticon
+        </a>
+
+
+		@*<div class="m-dropdown__wrapper">
+				<div class="m-dropdown__inner">
+					<div class="m-dropdown__body">
+						<div class="m-dropdown__content">
+							<div class="m-scrollable" data-scrollable="true" data-max-height="200">
+								<ul class="m-nav">
+									<li class="m-nav__section m-nav__section--first">
+										<span class="m-nav__section-text">
+											Emoticons
+										</span>
+									</li>
+									    
+                                   @{     string folderLocation =  "~/assets/emotions";
+                                       string[] fileEntries = Directory.GetFiles(Server.MapPath(folderLocation));
+                                       
+                                       }
+
+                                       @for (var k = 1; k <= fileEntries.Length; ++k)
+                                           {
+                                               string[] sr = (fileEntries[k-1]).Split('\\');
+                                               string actualName = sr[6].Split('.')[0].Split('.')[0];
+                                        //                                           System.Diagnostics.Debugger.Break();
+                                        <li class="m-nav__item">
+										<a class="m-nav__link select_emoticon">
+											<img style="width:30px;height:30px;" class="emoticon_@ViewData["k"] @actualName" src="~/assets/emotions/@sr[6]">
+                                            &nbsp;@actualName
+                                            
+										</a>
+									</li>  }
+                                       
+								</ul>
+                                
+							</div>
+						</div>
+					</div>
+				</div>
+		 </div>*@
+	</div>
+</div>

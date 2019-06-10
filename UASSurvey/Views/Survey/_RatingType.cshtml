@@ -1,0 +1,30 @@
+﻿
+
+
+
+
+<div id="rating_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+        <div class="container_overlay clonable" id="rating_container_overlay_question_picture_" style="display:none;">
+            <img id="rating_img_place_" name="rating_img_place_" src="" alt="" class="image clonable" style="" />
+        </div>
+
+
+        <div id="rating_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">Rating type question</div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "rating_"); }
+
+            <div class="form-group m-form__group">
+                        
+                        @{ Html.RenderPartial("_RatingPortlet", ViewData["type"] = "rating_"); }
+
+            </div>
+
+
+
+
+    </div>
+
+</div>
+

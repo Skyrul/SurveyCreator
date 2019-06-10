@@ -1,0 +1,114 @@
+﻿<style>
+    div.gallery {
+        margin: 22px;
+        border: 1px solid #cfcece;
+        float: left;
+        width: 180px;
+        padding:6px;
+        text-align:center;
+        
+       
+    }
+
+        div.gallery:hover {
+            border: 2px solid #ff0000;
+        }
+
+        div.gallery img {
+            width: 70%;
+            height: auto;
+
+        }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+</style>
+
+
+<!--begin::Modal-->
+<div class="modal fade" id="emoticons_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="pull-left">
+                <h4 class="modal-title" id="exampleModalLabel">
+                    Emoticons Selector
+                 </h4>
+                </div>
+                    <div class="pull-right">
+                        <input type="hidden" id="targetEmoticonDropDown" value="" />
+                        <select id="emoticongroupselect" class="m-select2--square form-control">
+                            <option value="" selected disabled>Select Group...</option>
+                            @{
+                                string main_folder = Url.Content("../assets/emoticons");
+                                string[] all_folders = Directory.GetDirectories(Server.MapPath(main_folder));
+                                string[] nice_name = new string[] { "Fancy", "Blue background", "Animated 1", "Animated 2" };
+                                int u = -1;
+                                foreach (var y in all_folders)
+                                {
+                                    string[] folderNames = y.Split('\\');
+                                    string actualFolderName = folderNames[6];
+                                    <option value="@actualFolderName">@actualFolderName</option>
+                                    
+                                }
+
+                            }
+                            
+                        </select>
+                    </div>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">
+                        &times;
+                    </span>
+                </button>
+            </div>
+            <div class="modal-body" style="height:70vh">
+                <div class="m-scrollable" data-scrollbar-shown="true" data-scrollable="true" data-max-height="500">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--begin::Portlet-->
+                            <div class="m-portlet" id="all_emoticons_portlet">
+                                @{ 
+                                    foreach (var j in all_folders)
+                                    {
+                                        string[] folderNames = j.Split('\\');
+                                        string actualFolderName = folderNames[6];
+                                        string[] fileEntries_1 = Directory.GetFiles(j);
+                                        <div class="m-portlet__body" id="@actualFolderName" style="display:none;">
+                                            @for (var k = 1; k <= fileEntries_1.Length; ++k)
+                                            {
+                                                string[] sr = (fileEntries_1[k - 1]).Split('\\');
+                                                string actualName = sr[7].Split('.')[0].Split('.')[0];
+                                                string nameWithExtension = sr[7];
+                                                <div class="gallery">
+                                                    <a class="m-nav__link select_emoticon">
+                                                        <img class="emoticon_@ViewData["k"] @actualName @nameWithExtension" src="~/assets/emoticons/@actualFolderName/@sr[7]" alt="@actualName" width="100" height="100">
+                                                    </a>
+                                                    <div class="desc">@actualName</div>
+                                                </div>
+                                            }
+                                        </div>
+                                        //System.Diagnostics.Debugger.Break();
+                                    }
+                                }
+
+                                </div>
+                            </div>
+                            <!--end::Portlet-->
+                        </div>
+                    </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    Close
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--end::Modal-->

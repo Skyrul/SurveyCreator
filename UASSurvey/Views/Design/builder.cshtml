@@ -1,0 +1,344 @@
+﻿
+
+
+
+<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body m-page__container">
+
+
+   
+    <div class="col-lg-12 " >
+
+        <div id="designer" class="row">
+
+            <div class="col-sm-5" style="border-right:solid 1px silver;">
+                <div class="row">
+                    <h3><span class="m--pull-left" >Designer</span><span id="spanquestionno" class="m--pull-right" style="margin-left:50px">Question No: <span id="question_no"></span></span></h3>
+                    <div id="questionGroup_0" class="col-lg-12">
+                        <label id="question_label">Question Text: </label>
+                        <br />
+                        <textarea required id="questionGroup_0_inputQuestion" name="questionGroup_0_inputQuestion" class="form-control" onkeyup="onKeyUpQuestion()"></textarea>
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label id="help_label">Question Help / Description Text (optional)</label>
+                        <br />
+                        <textarea id="questionhelp_text" name="questionhelp_text" class="form-control" rows="3" onkeyup="onKeyUpHelperText()"></textarea>
+                        <br />
+                    </div>
+
+
+
+                    @*<div class="row">
+                <div class="col-lg-12 hidden_part" id="multichoice_inputs">
+                    <label>Choices&nbsp;&nbsp;&nbsp;</label><a class="btn btn-sm btn-success btn_add_choice" data-id="multichoice_input_1">Add choice</a>
+                    <br />
+                    <span style="display:inline-block" id="multichoice_input_1_section">
+                        <span style="float:left">
+                            <input id="multichoice_input_1" name="multichoice_input_1" class="form-control" onkeyup="onChoiceInputChange(this.id)" />
+                        </span>
+                        <span style="float:right; font-size:large"><i class=""></i></span>
+                    </span>
+                </div>
+            </div>*@
+
+                    @Html.Partial("ChoicesInput")
+
+                    @Html.Partial("RatingInput")
+
+
+                    <div class="row">
+                        @Html.Partial("matrixGroup")
+                    </div>
+
+                    <div class="row">
+                        @Html.Partial("multiStatement")
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 hidden_part" id="picturechoice_inputs">
+                        <span style="display:none;" id="pictures_count">0</span>
+                        <label>Choices</label>
+                        <br />
+                        <div class="m-section">
+                            <span class="m-section__sub">
+                                Selection:
+                            </span>
+                            <div class="m-section__content">
+                                <div class="row">
+                                    <div class="col">
+                                        <!--begin: Dropdown-->
+                                        <div class="m-dropdown m-dropdown--inline  m-dropdown--arrow" data-dropdown-toggle="click">
+                                            <a class="m-dropdown__toggle btn btn-success dropdown-toggle" id="final_selection">
+                                                <i class="m-nav__link-icon flaticon-share"></i>
+                                                <span class="m-nav__link-text">
+                                                    Multiple selection
+                                                </span>
+                                            </a>
+                                            <div class="m-dropdown__wrapper">
+                                                <span class="m-dropdown__arrow m-dropdown__arrow--left"></span>
+                                                <div class="m-dropdown__inner">
+                                                    <div class="m-dropdown__body">
+                                                        <div class="m-dropdown__content">
+                                                            <ul class="m-nav">
+                                                                <li class="m-nav__section m-nav__section--first">
+                                                                    <span class="m-nav__section-text">
+                                                                        Choose one
+                                                                    </span>
+                                                                </li>
+                                                                <li class="m-nav__item">
+                                                                    <a class="m-nav__link" id="multiple_selection">
+                                                                        <i class="m-nav__link-icon flaticon-share"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Multiple selection
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__item">
+                                                                    <a class="m-nav__link" id="single_selection">
+                                                                        <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Single selection
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end: Dropdown-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+        <span style="display:inline-block" id="picturechoice_input_1_section">
+            <span style="float:left">
+                <input type="file" accept="image/*" id="picturechoice_input_1" name="picturechoice_input_1" class="form-control picturechoice_inputs" />
+            </span>
+            <span style="float:right; font-size:large"><a onclick="addAnotherPicture('picturechoice_input_1')">+</a></span>
+        </span>
+        <span style="display:inline-block" id="picturechoice_input_2_section">
+            <span style="float:left">
+                <input type="file" accept="image/*" id="picturechoice_input_2" name="picturechoice_input_2" class="form-control picturechoice_inputs" />
+            </span>
+            <span style="float:right; font-size:large"><a onclick="addAnotherPicture('picturechoice_input_2')">+</a></span>
+        </span>
+        -->
+                        <span style="display:inline-block" id="picturechoice_input_3_section">
+                            <span style="float:left">
+
+                                <div class="">
+                                    <p>Add as many images as you like.</p>
+                                    <!-- bootstrap-imageupload. -->
+                                    <div class="imageupload panel panel-default">
+                                        <div class="panel-heading clearfix">
+                                            <h3 class="panel-title pull-left">Upload Image</h3>
+                                            <div class="btn-group pull-right">
+                                                <button type="button" class="btn btn-default active">File</button>
+                                                <button type="button" class="btn btn-default">URL</button>
+                                            </div>
+                                        </div>
+                                        <div class="file-tab panel-body">
+                                            <label class="btn btn-default btn-file" id="file-tab">
+                                                <span>Browse</span>
+                                                <!-- The file is stored here. -->
+                                                <input type="file" name="image-file" id="file_image">
+                                            </label>
+                                            <button type="button" class="btn btn-default" id="removeImageButton_ImageUpload">Remove</button>
+                                        </div>
+                                        <div class="url-tab panel-body">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" id="submitUrlButton_ImageUpload" onclick="getUrlPicture()">Submit</button>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-default" id="removeUrlImageButton_ImageUpload">Remove</button>
+                                            <!-- The URL is stored here. -->
+                                            <input type="hidden" name="image-url">
+                                        </div>
+                                    </div>
+
+                                    <!-- bootstrap-imageupload method buttons. -->
+                                    <button type="button" id="imageupload-disable" class="btn btn-danger">Disable</button>
+                                    <button type="button" id="imageupload-enable" class="btn btn-success">Enable</button>
+                                    <button type="button" id="imageupload-reset" class="btn btn-primary">Reset</button>
+
+                                </div>
+
+
+                            </span>
+                        </span>
+                    </div>
+                            </div>
+                     @*<div class="row" >
+                         <button type="button" class="btn btn-metal" data-toggle="modal" data-target="#emoticons_modal">
+                            Launch Emoticon Selctor
+                         </button>
+                     </div>*@
+
+                            <div class="row">
+                                <div class="col-lg-12 hidden_part" id="dropdown_input">
+                                    <label>Choices</label>
+                                    <br />
+                                    <textarea placeholder="Add one choice per line." id="dropdown_list" name="dropdown_list" class="form-control" rows="3" onchange="addToDropdown()"></textarea>
+                                </div>
+                            </div>
+
+
+                            @Html.Partial("OpinionScaleInput")
+
+                            @Html.Partial("NumberInput")
+
+                            @Html.Partial("DateInput")
+
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="m-checkbox">
+                                                <input type="checkbox" class="" id="required" name="required" value="required" />
+                                                Required
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>                                    
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    @{ Html.RenderPartial("_LogicJump");  }
+                                </div>
+                            </div>
+                            <div class="row" style="height:127px;">
+                                <div class="col-lg-12">
+                                    <label>Upload question picture</label>
+                                    <br />
+                                   
+                                    <input type="file" class="fileinput-button  btn-sm btn-brand"  id="filepic" name="filepic" accept="image/*" />
+                                    <a class="btn btn-sm btn-danger btn_remove_picture">Remove Picture</a>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="row">
+
+                                <div class="col-lg-12 col-lg-offset-0  col-lg-pull-1">
+                                    <h3><span id="type_identifier"></span> Preview</h3>
+                                  
+                                    @*<br />*@
+                                    <div id="preview_0">
+
+                                        <div class="col-md-12 column sortable ">
+
+                                            <div class="container_overlay" id="container_overlay_question_picture" style="display:none;">
+                                                <img id="img_place" name="img_place" src="" alt="" class="image" style="" />
+
+                                                <div class="middle_overlay">
+                                                    <div class="text_overlay"><a class="btn btn-sm btn-danger btn_remove_picture">Remove Picture</a></div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div id="preview_question" style="font-size: x-large;color: #000; padding: 10px;"></div>
+
+                                           
+
+
+                                            @*<div id="helptext_place" style="font-size: large;color: #808080; padding: 10px; font-style:italic;"></div>*@
+
+                                            
+                                            @*<div id="image_place" class="box effect1 hidden"><h3>Picture here</h3></div>*@
+                                            <div id="answertype_place"></div>
+                                            <div id="divAgreeButtons" class="col-lg-12" style="display:none; " >
+                                                @Html.Partial("_AgreeButtons")
+
+                                            </div> 
+
+                                            <div class="row" id="m_sortable_portlets" style="display:none;">
+
+                                                @Html.Partial("portlet_choice")
+                                            </div>
+                                            <div class="col-lg-12" id="multi_statement_portlets" style="display:none;">
+
+                                                @Html.Partial("multiStatementPreview")
+                                            </div>
+
+                                            <div class="col-lg-12" id="rating_portlets" style="display:none;">
+
+                                                @Html.Partial("RatingPreview")
+
+                                            </div>
+
+                                            <div class="col-lg-12" id="opinion_scale_preview" style="margin-bottom:40px">
+                                                @Html.Partial("_OpinionScalePreview")
+                                            </div>
+
+                                            <div class="col-lg-12" id="question_date_preview" style="display:none;">
+                                                <input id="question_datepicker" class="form-control" />
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 right">
+                                    <input type="hidden" name="hiddensurveyid" id="hiddensurveyid" value="@ViewBag.newsurveyid" />
+                                    <input type="hidden" name="userId" id="userId" value="" />
+                                    <input type="hidden" name="questionId" id="questionId" value="" />
+                                    <textarea required id="questionGroup_1_inputQuestion" name="questionGroup_1_inputQuestion" style="display:none" class="hidden_part"></textarea>
+                                    <input type="hidden" name="select_questionGroup_1" id="select_questionGroup_1" value="" class="hidden_part" />
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+        
+
+    </div>
+
+     
+ </div>
+
+@{ Html.RenderPartial("_PartialFontawesome", null); }
+@{ Html.RenderPartial("_PartialEmoticons", null); }
+
+    <!-- begin::Footer -->
+<footer class="m-grid__item m-footer m-footer__wrapper fixed-bottom modal-footer m-container--fluid ">
+    <div class="m-container m-container--fluid m-container--full-height m-page__container">
+        <div class="m-footer__wrapper ">
+            <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+              
+                <div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+                    <button type="button" class="btn_close_designer btn btn-md btn-danger " style="width:100px">Close</button>
+                    <button type="button" class="btn_save_question btn btn-md btn-success " style="width:100px">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- end::Footer -->
+
+@{ Html.RenderPartial("_LogicJumpModal"); }
+

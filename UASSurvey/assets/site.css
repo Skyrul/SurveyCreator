@@ -1,0 +1,124 @@
+﻿
+
+/****************************
+	For bootstrap stars rating
+*****************************/
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot');
+	src: url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+/*****************************/
+
+@font-face {
+	font-family: Demo_ConeriaScript_Slanted;
+	src: url('../../../../../Installables/WebFonts/coneria-script/Demo_ConeriaScript_Slanted.ttf') format('truetype');
+}
+
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@font-face {
+	font-family: Demo_ConeriaScript_Slanted;
+	src: url(../fonts/Demo_ConeriaScript_Slanted.ttf)  format('truetype');
+}
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+
+.wider-question-box {
+	width: 100%;
+	border: 1px solid #cccccc;
+}
+
+input[type="button"], 
+input[type="submit"] {
+		width: 210px;
+		font-size: larger;
+}
+
+.testclass {
+	border: solid 6px brown;
+	font-family:Demo_ConeriaScript_Slanted;
+	font-size:30px;
+}
+	  
+
+
+@supports (zoom:2) {
+	input[type="radio"], input[type=checkbox] {
+		zoom: 2;
+	}
+}
+
+@supports not (zoom:2) {
+	input[type="radio"], input[type=checkbox] {
+		transform: scale(2);
+		margin: 15px;
+	}
+}
+
+label {
+	/* fix vertical align issues */
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
+	color: #000;
+}
+
+label.text_white {
+	color: #fff;
+}
+
+
+.box h3 {
+	text-align: center;
+	position: relative;
+	top: 20px;
+}
+
+.box {
+	width: 70%;
+	height: 180px;
+	background: #FFF;
+	margin: 40px auto;
+}
+
+
+.effect1 {
+	box-shadow: 0 10px 6px -6px #777;
+}
+
+
+.hidden_part{
+	display: none;
+}
+
+.datepicker_position{
+    
+    width:900px;
+}
+
+
+/* Set padding to align with the question inputs */
+.OpinionLabels {
+    padding: 13px;
+    position: relative;
+    left: -29px;
+}
+
+.add_choice_button {
+    left: 13px;
+}

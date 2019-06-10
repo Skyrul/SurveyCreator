@@ -1,0 +1,214 @@
+﻿<div class="row">
+    <div class=" hidden_part" id="choices_inputs">        
+        
+        <div class="m-form__group form-group" id="">
+            <div class="col-12" style="display:none;">
+                <div class="col-6 col-form-label">
+                    <label>
+                        Customize Scale
+                    </label>
+                </div>
+                <div class="col-3">
+                    <span class="m-switch m-switch--icon m-switch--success">
+                        <label>
+                            <input type="checkbox" checked="checked" name="customornot" id="customornot">
+                            <span></span>
+                        </label>
+                    </span>
+                </div>
+                <div class="offset-3"></div>
+            </div>
+
+            <div class="scale_custom">
+
+                @*<div class="row col-12 orientation_row">
+                    <div class="col-6 col-form-label">
+                        <label>Orientation</label>
+                    </div>
+                    <div class="col-3 dropdown col-form-label">
+                        <button class="btn btn-brand dropdown-toggle" type="button" id="horizontalVerticalButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Horizontal
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item select_Horizontal">
+                                <!--<i class="fa fa-bell"></i>-->
+                                Horizontal
+                            </a>
+                            <a class="dropdown-item select_Vertical">
+                                <!--<i class="fa fa-cloud-upload"></i>-->
+                                Vertical
+                            </a>
+                        </div>
+                    </div>
+                    <div class="offset-3"></div>
+                </div>*@
+
+                @*<div class="row col-12 type_row">
+                    <div class="col-6 col-form-label">
+                        <label>Type</label>
+                    </div>
+                    <div class="col-3 dropdown col-form-label typeopinion_select">
+                        <button class="btn btn-brand dropdown-toggle typeopinion_select" type="button" id="type_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Text only
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item select_Pictures">
+                                <!--<i class="fa fa-bell"></i>-->
+                                Text with Pictures
+                            </a>
+                            <a class="dropdown-item select_Icons">
+                                Text with Icons
+                            </a>
+                            <a class="dropdown-item select_Emoticons">
+                                Text with Emoticons
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="offset-3"></div>
+
+                </div>*@
+
+                <div class="picture_icon_size_row hidden_part">
+                    <div class="col-6 col-form-label">
+                        <label>Picture/Icon Size</label>
+                    </div>
+                    <div class="col-3 dropdown col-form-label">
+                        <button class="btn btn-brand dropdown-toggle" type="button" id="smallBigButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Small   (100 by 100px)
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item select_SmallSize">
+                                Small   (100 by 100px)
+                            </a>
+                            <a class="dropdown-item select_BigSize">
+                                Big   (150 by 150px)
+                            </a>
+                        </div>
+                    </div>
+                    @*<div class="offset-3"></div>*@
+                </div>
+
+                <div class="row  ">
+                   
+                    <div class="col-md-6 form-group m-form__group ">
+            
+                        <div class="col-md-6 dropdown  typeopinion_select_1">
+                            <button class="btn btn-brand dropdown-toggle typeopinion_select_1 col_button_1" type="button" id="col_button_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               1 Column
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item select_Column_1" id="select_Column_1">
+                                    1 Column
+                                </a>
+                                <a class="dropdown-item select_Column_2" id="select_Column_2">
+                                   2 Column
+                                </a>
+                                <a class="dropdown-item select_Column_3" id="select_Column_3">
+                                   3 Column
+                                </a>
+                                <a class="dropdown-item select_Column_4" id="select_Column_4">
+                                    4 Column
+                                </a>
+                               
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-12" style="margin-top:8px" >
+                <div id="OpinionLabels" class="">
+
+                    <!--Template-->
+                    <div class="row OpinionLabels" style="display:none;" id="choice_input_0_section">
+                        <div class="col-12 ">
+
+                            <div class="col-md-12  ">
+                                <input id="choice_input_0" name="choice_input_0" class="form-control choice_input_0" value="" placeholder="enter text here" style="width:367px;" />
+                            </div>
+                            <div class="col-md-6 icon_select_0 hidden_part" id="icon_select_0">
+                                @Html.Partial("opinionIcons", ViewData["k"] = 0)
+                            </div>
+                            <div class="col-md-6 emoticon_select_0 hidden_part" id="emoticon_select_0">
+                                @Html.Partial("opinionEmoticons", ViewData["k"] = 0)
+                            </div>
+                            <div class="col-md-6 file_chooser_0 hidden_part" id="file_chooser_0">
+                                <input type="file" class="col-form-label m-input pic_file_0" id="pic_file_0" name="pic_file_0" accept="image/*" />
+                            </div>
+                            <div class="col-md-6 dropdown col-form-label typeopinion_select_0">
+                                <button class="btn btn-brand dropdown-toggle typeopinion_select_0 type_button_0" type="button" id="type_button_0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Text only
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item select_TextOnly_0">Text Only</a>
+                                    <a class="dropdown-item select_Pictures_0">Text with Pictures</a>
+                                    <a class="dropdown-item select_Icons_0">Text with Icons</a>
+                                    <a class="dropdown-item select_Emoticons_0">Text with Emoticons</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                        <div class="row  OpinionLabels" style="display:inline-block" id="choice_input_1_section">                                                            
+                            <div class="col-12 ">
+                                <div class="col-md-12">
+                                    <input id="choice_input_1" name="choice_input_1" class="form-control choice_input_1" value="" placeholder="enter text here" style="width:367px;" />
+                                </div>
+                                <div class="col-md-6 icon_select_1 hidden_part" id="icon_select_1">
+                                    @Html.Partial("opinionIcons", ViewData["k"] = 1)
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12  emoticon_select_1 hidden_part" id="emoticon_select_1">
+                                    @Html.Partial("opinionEmoticons", ViewData["k"] = 1)
+                                </div>
+
+                                <div class="col-md-12   file_chooser_1 hidden_part" id="file_chooser_1">
+                                    <input type="file" class="col-form-label m-input pic_file_1" id="pic_file_1" name="pic_file_1" accept="image/*" />
+                                </div>
+
+                                    <div class="col-md-6 dropdown  typeopinion_select_1">
+                                        <button class="btn btn-brand dropdown-toggle typeopinion_select_1 type_button_1" type="button" id="type_button_1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Text only
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item select_TextOnly_1">Text Only</a>
+                                            <a class="dropdown-item select_Pictures_1">Text with Pictures</a>
+                                            <a class="dropdown-item select_Icons_1">Text with Icons</a>
+                                            <a class="dropdown-item select_Emoticons_1">Text with Emoticons</a>
+
+                                        </div>
+                                    </div>                                                                                                
+                            </div>
+                        </div>
+
+                </div>
+                 </div>
+                <div class="row" >
+                    <div class="col-md-6 form-group m-form__group add_choice_button">
+                        @*<label>Choices&nbsp;&nbsp;&nbsp;
+            </label>*@
+                        <a class="btn btn-md btn-success btn_add_the_choice" data-id="choice_input_0">Add choice</a>
+                    </div>
+                </div>
+                <div class="row" id="other_choice">
+                    <div class="col-lg-12 add_choice_button">
+                        <label>Allow other</label>
+                        <br />
+                        <input type="checkbox" id="other_choice_checkbox" />
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <br />
+        
+
+    </div>
+</div>

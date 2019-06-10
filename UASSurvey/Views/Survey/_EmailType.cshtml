@@ -1,0 +1,34 @@
+﻿
+
+
+
+<div id="email_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+        <div class="container_overlay clonable" id="email_container_overlay_question_picture_" style="display:none;">
+            <img id="email_img_place_" name="email_img_place_" src="" alt="" class="image clonable" style="" />
+        </div>
+
+
+        <div id="email_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">Email type question</div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "email_"); }
+
+        <div class="row">
+            <div class="form-group m-form__group row">
+                <div class="col-lg-12 col-md-9 col-sm-12 ">
+                    <div class="input-group date clonable" id="email_" style="width:165%;">
+                        <input id="email_input_" value="" type="email" placeholder="yours@email.com" class="form-control clonable">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+

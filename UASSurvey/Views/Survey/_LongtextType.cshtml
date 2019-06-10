@@ -1,0 +1,27 @@
+﻿
+<div id="longtext_publish_" style="display:none;" class="clonable">
+
+    <div class="col-md-12 column sortable ">
+        <div style="display:none;"><input id="is_required_" value="false" class="clonable" /></div>
+        @{ Html.RenderPartial("_QuestionHelp", ViewData["type"] = "longtext_"); }
+@*        <div class=" col-lg-12 clonable" id="longtext_container_overlay_question_picture_" style="display:none;text-align:center;left:100px;">*@
+      
+           <span style="display:block;text-align:center;">
+               <img id="longtext_img_place_" name="longtext_img_place_" src="" alt="" style="display:block;" class="clonable" />
+           </span>
+        
+
+            @*<div class="middle_overlay">
+                <div class="text_overlay"><a class="btn btn-sm btn-danger btn_remove_picture">Remove Picture</a></div>
+            </div>*@
+        @*</div>*@
+
+
+        <div id="longtext_preview_question_" style="font-size: large;color: #000; padding: 10px;" class="clonable">Longtext question</div>
+      
+
+        <textarea id="longtext_answertextarea_" name="longtext_answertextarea_" class="form-control clonable" placeholder="Answer goes here.."></textarea>
+
+    </div>
+
+</div>

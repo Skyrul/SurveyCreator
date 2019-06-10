@@ -1,0 +1,49 @@
+﻿<link href="~/assets/range-slider.css" rel="stylesheet" type="text/css" />
+<div class="row">
+    <div class="col-lg-12" id="staglabel_input">
+        <label>Choose label type</label>
+        <br />
+        <div class="row">
+            <div class="col-md-12 dropdown col-form-label staglabel_select">
+                <button class="btn btn-brand dropdown-toggle staglabel_button" type="button" id="staglabel_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Numbers
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" id="select_alphabets">
+                        <!--<i class="fa fa-bell"></i>-->
+                        Alphabets
+                    </a>
+                    <a class="dropdown-item" id="select_labels">
+                        Labels
+                    </a>
+                    <a class="dropdown-item" id="select_numbers">
+                        <!--<i class="fa fa-bell"></i>-->
+                        Numbers
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-12 hidden_part" id="opinionscale_input">
+        <div id="labelings_opinionscale">
+            <span><label>Left label</label>&nbsp;&nbsp;&nbsp;<input id="leftlabel_opinionscale" type="text" /></span><br />
+            <span><label>Right label</label>&nbsp;&nbsp;&nbsp;<input id="rightlabel_opinionscale" type="text" /></span><br />
+            <span><label>Bottom label</label>&nbsp;&nbsp;&nbsp;<input id="bottomlabel_opinionscale" type="text" /></span><br />
+        </div>
+     <div id="rangeSliderGroup">
+        <label>Steps</label>
+        <br />
+        <p><span id="indicatorValRange"></span></p>
+        <div id="slidecontainer">
+            <input type="range" min="10" max="100" value="5" step="10" class="slider" id="myRange">
+        </div>
+     </div>
+     <div id="labelInputsGroup">
+         <div id="labelling_" class="clonable" style="display:none;"><span><label id="label_" class="clonable">Label </label>&nbsp;&nbsp;&nbsp;<input class="clonable" id="labelInput_" type="text" /></span><br /></div>         
+         <div id="labellingInputs"></div>
+     </div>
+    </div>
+    
+</div>

@@ -1,0 +1,307 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- begin::Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Layout
+    </title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="@Url.Content("../assets/jplayer/jplayer.blue.monday.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("../assets/jplayer/modal.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("../assets/jplayer/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("../assets/jplayer/jquery.jplayer.min.js")"></script>    
+    
+    @*<link rel="stylesheet" href="https://raw.githubusercontent.com/mozilla/pdf.js/master/web/text_layer_builder.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://raw.githubusercontent.com/mozilla/pdf.js/master/web/ui_utils.js" type="text/javascript"></script>
+    <script src="https://raw.githubusercontent.com/mozilla/pdf.js/master/web/text_layer_builder.js" type="text/javascript"></script>*@
+
+    <!--end::Web font -->
+    <!--begin::Base Styles -->
+    <!--begin::Page Vendors -->
+    @*<link href="@Url.Content("../assets/vendors/custom/fullcalendar/fullcalendar.bundle.css")" rel="stylesheet" type="text/css" />*@
+    <!--end::Page Vendors -->
+    @*<link href="@Url.Content("../assets/vendors/base/vendors.bundle.css")" rel="stylesheet" type="text/css" />*@
+    @*<link href="@Url.Content("../assets/demo/demo5/base/style.bundle.css")" rel="stylesheet" type="text/css" />*@
+    <!--end::Base Styles -->
+    <link rel="shortcut icon" href="../assets/demo/demo5/media/img/logo/favicon.ico" />
+    <style>
+        .modal.in .modal-dialog {
+            transform: none; /*translate(0px, 0px);*/
+        }
+    </style>
+
+</head>
+<!-- end::Head -->
+<!-- end::Body -->
+<body class="m-page--fluid m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+
+    <!-- begin:: Page -->
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+
+        @*<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+        <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+            <div class="jp-type-single">
+                <div class="jp-gui jp-interface">
+                    <div class="jp-controls">
+                        <button class="jp-play" role="button" tabindex="0">play</button>
+                        <button class="jp-stop" role="button" tabindex="0">stop</button>
+                    </div>
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div>
+                    <div class="jp-volume-controls">
+                        <button class="jp-mute" role="button" tabindex="0">mute</button>
+                        <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div>
+                    </div>
+                    <div class="jp-time-holder">
+                        <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                        <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+                        <div class="jp-toggles">
+                            <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="jp-details">
+                    <div class="jp-title" aria-label="title">&nbsp;</div>
+                </div>
+                <div class="jp-no-solution">
+                    <span>Update Required</span>
+                    To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                </div>
+            </div>
+        </div>*@
+
+    </div>
+
+    <!-- end:: Page -->
+
+    <h2>Animated Modal with Header and Footer</h2>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    <!-- Button trigger modal -->
+    @*<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+    </button>*@
+    
+    <!-- begin myModal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    @*<object type="application/pdf" id="the-canvas" width="800" height="500">this is not working as expected</object>*@
+                    @*<object type="application/pdf" data="http://www.inkwelleditorial.com/pdfSample.pdf#toolbar=1&statusbar=1&messages=1&navpanes=1&highlight=lt&search" width="800" height="500">this is not working as expected</object>*@
+                    
+                    <div>
+                        <button id="prev">Previous</button>
+                        <button id="next">Next</button>
+                        &nbsp; &nbsp;
+                        <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+                    </div>
+
+                    <canvas id="the-canvas"></canvas>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of myModal-->
+
+
+    <!--begin::Base Scripts -->
+    @*<script src="@Url.Content("../assets/vendors/base/vendors.bundle.js")" type="text/javascript"></script>*@
+    @*<script src="@Url.Content("../assets/demo/demo5/base/scripts.bundle.js")" type="text/javascript"></script>*@
+    <!--end::Base Scripts -->
+
+    <!--begin::Page Vendors -->
+@*    <script src="@Url.Content("../assets/vendors/custom/fullcalendar/fullcalendar.bundle.js")" type="text/javascript"></script>*@
+    <!--end::Page Vendors -->
+    
+
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="//mozilla.github.io/pdf.js/web/viewer.js"></script>
+    @*<script type="text/javascript" src="@Url.Content("../assets/PdfViewer.js")">
+    </script>*@    
+    <script>
+// If absolute URL from the remote server is provided, configure the CORS
+// header on that server.
+var url = '//cdn.mozilla.net/pdfjs/tracemonkey.pdf';
+
+// Loaded via <script> tag, create shortcut to access PDF.js exports.
+var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+// The workerSrc property shall be specified.
+pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+
+var pdfDoc = null,
+    pageNum = 1,
+    pageRendering = false,
+    pageNumPending = null,
+    scale = 1.73,
+    canvas = document.getElementById('the-canvas'),
+    ctx = canvas.getContext('2d');
+
+/**
+ * Get page info from document, resize canvas accordingly, and render page.
+ * param num Page number.
+ */
+function renderPage(num) {
+  pageRendering = true;
+  // Using promise to fetch the page
+  pdfDoc.getPage(num).then(function(page) {
+    var viewport = page.getViewport(scale);
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    // Render PDF page into canvas context
+    var renderContext = {
+      canvasContext: ctx,
+      viewport: viewport
+        };
+        //var canvasOffset = $(canvas).offset();
+        //var $textLayerDiv = $('#text-layer').css({
+        //    height: viewport.height + 'px',
+        //    width: viewport.width + 'px',
+        //    top: canvasOffset.top,
+        //    left: canvasOffset.left
+        //});
+
+    var renderTask = page.render(renderContext);
+
+        // gets the first line of the page
+        page.getTextContent().then(function (textContent) {
+            console.log(textContent);
+
+            
+            //var textLayer = new TextLayerBuilder({
+            //    textLayerDiv: $textLayerDiv.get(0),
+            //    pageIndex: page_num - 1,
+            //    viewport: viewport
+            //});
+
+            //textLayer.setTextContent(textContent);
+            //textLayer.render();
+        });
+
+    // Wait for rendering to finish
+    renderTask.promise.then(function() {
+      pageRendering = false;
+      if (pageNumPending !== null) {
+        // New page rendering is pending
+        renderPage(pageNumPending);
+        pageNumPending = null;
+      }
+    });
+  });
+
+  // Update page counters
+  document.getElementById('page_num').textContent = num;
+
+
+    
+}
+
+/**
+ * If another page rendering in progress, waits until the rendering is
+ * finised. Otherwise, executes rendering immediately.
+ */
+function queueRenderPage(num) {
+  if (pageRendering) {
+    pageNumPending = num;
+  } else {
+    renderPage(num);
+  }
+}
+
+/**
+ * Displays previous page.
+ */
+function onPrevPage() {
+  if (pageNum <= 1) {
+    return;
+  }
+  pageNum--;
+  queueRenderPage(pageNum);
+}
+document.getElementById('prev').addEventListener('click', onPrevPage);
+
+/**
+ * Displays next page.
+ */
+function onNextPage() {
+  if (pageNum >= pdfDoc.numPages) {
+    return;
+  }
+  pageNum++;
+  queueRenderPage(pageNum);
+}
+document.getElementById('next').addEventListener('click', onNextPage);
+
+/**
+ * Asynchronously downloads PDF.
+ */
+pdfjsLib.getDocument(url).then(function(pdfDoc_) {
+  pdfDoc = pdfDoc_;
+  document.getElementById('page_count').textContent = pdfDoc.numPages;
+
+  // Initial/first page rendering
+  renderPage(pageNum);
+});
+    </script>
+</body>
+<!-- end::Body -->
+</html>
